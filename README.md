@@ -1,4 +1,4 @@
-# Hackathon Bookshop project
+# Hackathon Course project
 
 ### 1. Install the dependencies
 - if you are using Intellij, go to file `pom.xml` and select the reload option to install the dependencies
