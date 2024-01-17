@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import AliceCarousel from "react-alice-carousel";
+import 'react-alice-carousel/lib/alice-carousel.css';
+import "../ProductList/productList.css";
 import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { TutorCard } from "components/Card/Card";
@@ -26,7 +28,9 @@ const GoodDesign = () => {
         0: { items: 1 },
         568: { items: 2 },
         800: { items: 3 },
-        1024: { items: 4 },
+        1024: { items: 4,
+                itemsFit: 'contain',
+        },
     };
     const [tutors, setTutors] = useState([]);
     useEffect(() => {
@@ -56,7 +60,7 @@ const GoodDesign = () => {
     return <GoodDesignStyled>
         {console.log(tutors)}
         <p className="title">Get to know your tutors</p>
-        <AliceCarousel
+        <AliceCarousel  
             mouseTracking
             responsive={responsiveAlice}
             controlsStrategy="alternate"
