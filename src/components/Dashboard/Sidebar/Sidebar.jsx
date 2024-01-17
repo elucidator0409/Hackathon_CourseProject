@@ -3,10 +3,7 @@ import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import React, { useState, useEffect } from "react";
 
-import { ReactComponent as KitLogo } from "../../../assets/images/kits-logo.svg";
-import { ReactComponent as DashboardIcon } from "../../../assets/icons/dashboardicon/dashboard-icon.svg";
-import { ReactComponent as MessIcon } from "../../../assets/icons/dashboardicon/mess-icon.svg";
-import { ReactComponent as MyTutorsIcon } from "../../../assets/icons/dashboardicon/mytutors-icon.svg";
+import ThePlayerLogo from "../../../assets/images/img_theplayer_logo.png";
 import { ReactComponent as PurchaseIcon } from "../../../assets/icons/dashboardicon/purchase-icon.svg";
 import { ReactComponent as SessionsIcon } from "../../../assets/icons/dashboardicon/sessions-icon.svg";
 import { BASE_URL } from "url/url";
@@ -160,14 +157,12 @@ export const Sidebar = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const user = localStorage.getItem('user')
-
   const { id, orderId } = useParams();
   const [isOpen, setOpen] = useState(false);
   const toggleShowMore = () => setOpen(!isOpen);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const [userFetch, setUserFetch] = useState([]);
   const [role, setRole] = useState([]);
-  //const { orderId } = props;
   const url = `/mainboard/${orderId}/my-courses/${orderId}`;
   const videoPlayerUrl = `/mainboard/${orderId}/video-player/${id}`;
   const mainboardUrl = `/mainboard/${orderId}`;
@@ -211,91 +206,47 @@ export const Sidebar = (props) => {
       }
     >
       {isDesktopOrLaptop && (
-        <KitLogo
-          className="KitLogo"
-          height="36px"
-          onClick={() => navigate("/home")}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={ThePlayerLogo} alt="logo" style={{ width: "120px", height: "50px", marginTop: "20px" }} onClick={() => navigate("/home")} />
       )}
       {isTabletOrMobile && (
-        <KitLogo
-          className="KitLogo"
-          height="36px"
-          onClick={() => navigate("/home")}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={ThePlayerLogo} alt="logo" style={{ width: "120px", height: "50px", marginTop: "20px" }} onClick={() => navigate("/home")} />
       )}
       <div className="top-sidebar">
         {isDesktopOrLaptop &&
           location.pathname !== videoPlayerUrl &&
           location.pathname !== `/mainboard/${orderId}/video-call` && (
             <>
-            
-            
-             
-             
               { isStudent ?
-              (<><NavItem text="My Courses" path={url} icon={<SessionsIcon />} />
-              <NavItem
-                text="Hour purchase history"
-                path={`/mainboard/${orderId}/hour-purchase-history/${orderId}`}
-                icon={<PurchaseIcon />}
-              />
-              
-             
-              </>
-              )
-              :
-              (
-              <NavItem
-                text="Add Courses"
-                path={`/mainboard/${orderId}/add-courses/${orderId}`}
-                icon={<SessionsIcon />}
-              />)
-} 
-              
+                (<>
+                  <NavItem text="My Courses" path={url} icon={<SessionsIcon />} />
+                  <NavItem
+                    text="Hour purchase history"
+                    path={`/mainboard/${orderId}/hour-purchase-history/${orderId}`}
+                    icon={<PurchaseIcon />}
+                  />  
+                </>) :
+                (
+                  <NavItem
+                    text="Add Courses"
+                    path={`/mainboard/${orderId}/add-courses/${orderId}`}
+                    icon={<SessionsIcon />}
+                  />
+                )
+              } 
             </>
           )}
 
-        {(isTabletOrMobile ||
-          location.pathname === videoPlayerUrl ||
-          location.pathname === `/mainboard/${orderId}/video-call`) && (
-          <>
-            <NavItem path={mainboardUrl} icon={<DashboardIcon />} />
-            <NavItem
-              path={`/mainboard/${orderId}/messages/${orderId}`}
-              icon={<MessIcon />}
-            />
-            <NavItem
-              path={`/mainboard/${orderId}/sessions/${orderId}`}
-              icon={<SessionsIcon />}
-            />
-            <NavItem
-              path={`/mainboard/${orderId}/all-courses/${orderId}`}
-              icon={<SessionsIcon />}
-            />
-           <NavItem
-                path={`/mainboard/${orderId}/all-courses/${orderId}`}
-                icon={<SessionsIcon />}
+          {(isTabletOrMobile ||
+            location.pathname === videoPlayerUrl ||
+            location.pathname === `/mainboard/${orderId}/video-call`) && (
+            <>
+              <NavItem path={url} icon={<SessionsIcon />} />
+              <NavItem
+                path={`/mainboard/${orderId}/hour-purchase-history/${orderId}`}
+                icon={<PurchaseIcon />}
               />
-              
-            <NavItem path={url} icon={<SessionsIcon />} />
-            <NavItem
-              path={`/mainboard/${orderId}/hour-purchase-history/${orderId}`}
-              icon={<PurchaseIcon />}
-            />
-            <NavItem
-              path={`/mainboard/${orderId}/my-tutors/${orderId}`}
-              icon={<MyTutorsIcon />}
-            />
-            <NavItem
-              path={`/mainboard/${orderId}/recent-tutors/${orderId}`}
-              icon={<MyTutorsIcon />}
-            />
-            <NavItem path={allClassesUrl} icon={<MyTutorsIcon />} />
-          </>
-        )}
+            </>
+          )}
       
       </div>
     </StyledSidebar>

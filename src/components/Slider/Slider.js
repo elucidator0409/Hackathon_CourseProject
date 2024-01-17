@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import "../../App.css";
 import curve from "assets/images/curve.svg";
-import playIcon from "assets/icons/playicon.svg";
 import waveCheckIcon from "assets/icons/wave-check.svg";
 import girlImage from "assets/images/home-page-girl.png";
 import studentIcon from "assets/icons/student.svg";
 import emailIcon from "assets/icons/email.svg";
 import groupStudentIcon from "assets/icons/group-student.svg";
-import { Button } from "components/Button/Button";
 import { useMediaQuery } from "react-responsive";
 
 import avatar1 from "assets/images/avatars/avatar1.svg";
@@ -230,17 +228,6 @@ const Slider = () => {
             anywhere and at anytime on this platform
           </p>
           <img src={curve} alt="" />
-
-          <div className="join-and-play">
-            <div className="join-and-play-btn">
-              <Button>Join For Free</Button>
-            </div>
-            <div className="play-now">
-              <img src={playIcon} alt="" />
-            </div>
-            <p className="play-now-text">Play now</p>
-          </div>
-
           <div className="wave-check">
             <ul>
               <li>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "components/Button/Button";
-import KITSLogo from "../../assets/images/kits-logo.svg";
+import ThePlayerLogo from "../../assets/images/img_theplayer_logo.png";
 import SignUpBanner from "../../assets/images/sign-up-banner.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -12,6 +12,8 @@ const StyledSignUp = styled.div`
   display: flex;
   flex-direction: row;
   .sign-up-logo {
+    width: 240px;
+    height: 180px;
     padding-bottom: 76px;
   }
 
@@ -48,7 +50,7 @@ const StyledSignUp = styled.div`
     padding-left: 170px;
     padding-top: 145px;
     padding-right: 170px;
-    background: #dee4f3;
+    background: rgba(159, 215, 249, 0.4);
     .sign-up {
       font-family: Nunito;
       font-size: 64px;
@@ -56,7 +58,7 @@ const StyledSignUp = styled.div`
       font-weight: 900;
       line-height: normal;
       .sign {
-        color: #2e2c2c;
+        color: #0c4ca3;
       }
       .up {
         color: #0c4ca3;
@@ -82,7 +84,6 @@ const StyledSignUp = styled.div`
       margin-bottom: 44px;
       border: none;
       border-radius: 15px;
-      color: rgba(140, 136, 136, 0.5);
       width: 100%;
       outline: none;
       height: 49px;
@@ -147,112 +148,78 @@ const Register = () => {
 
     return (
         <>
-            {/* <form onSubmit={handleRegisterSubmit}>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="FullName"
-          value={formData.fullName}
-          onChange={handleInputChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleInputChange}
-        />
-        <input
-          type="role"
-          name="role"
-          placeholder="Role"
-          value={formData.role}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Register</button>
-        <Link to="/login-page">
-          <button id="login-link">Move to Login Page</button>
-        </Link>
-      </form> */}
-            <StyledSignUp>
-                <div className="left">
-                    <div className="sign-up-logo-info">
-                        <img
-                            className="sign-up-logo"
-                            src={KITSLogo}
-                            alt=""
-                            onClick={() => navigate("/")}
-                            style={{ cursor: "pointer" }}
-                        />
-                        <div className="welcome-to-kits">Welcome to KITS!</div>
-                        <div className="sign-up-info">
-                            KITS connects students and their families with qualified tutors
-                            for improved learning outcomes.
-                        </div>
-                    </div>
-                    <img className="sign-up-banner" src={SignUpBanner} alt="" />
-                </div>
-                <div className="right">
-                    <div className="sign-up">
-                        <span className="sign">Sign</span>
-                        <span className="up"> Up</span>
-                    </div>
-                    <div className="already-have-account-log-in">
-                        <span className="already-have-account">
-                            Already have an account?
-                        </span>
-                        <a
-                            className="log-in"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => navigate("/login-page")}
-                        >
-                            {" "}
-                            Log in
-                        </a>
-                    </div>
-                    <form onSubmit={handleRegisterSubmit}>
-                        <input
-                            className="info"
-                            type="text"
-                            name="fullName"
-                            placeholder="FullName"
-                            value={formData.fullName}
-                            onChange={handleInputChange}
-                        />
-                        <br />
-                        <input
-                            className="info"
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                        />
-                        <br />
-                        {/* Password field should have eye icon to show password */}
-                        <input
-                            className="info"
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={formData.password}
-                            onChange={handleInputChange}
-                        />
-                        <br />
-                        <Button bgColor={"#0C4CA3"} width={218} height={269} type="submit">
-                            Sign Up
-                            {console.log(formData.role)}
-                        </Button>
-                    </form>
-                </div>
-            </StyledSignUp>
+          <StyledSignUp>
+              <div className="left">
+                  <div className="sign-up-logo-info">
+                      <img
+                          className="sign-up-logo"
+                          src={ThePlayerLogo}
+                          alt=""
+                          onClick={() => navigate("/")}
+                          style={{ cursor: "pointer" }}
+                      />
+                      <div className="welcome-to-kits">Welcome to The Player!</div>
+                      <div className="sign-up-info">
+                          The Player connects students and their families with qualified tutors
+                          for improved learning outcomes.
+                      </div>
+                  </div>
+                  <img className="sign-up-banner" src={SignUpBanner} alt="" />
+              </div>
+              <div className="right">
+                  <div className="sign-up">
+                      <span className="sign">Sign</span>
+                      <span className="up"> Up</span>
+                  </div>
+                  <div className="already-have-account-log-in">
+                      <span className="already-have-account">
+                          Already have an account?
+                      </span>
+                      <a
+                          className="log-in"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => navigate("/login-page")}
+                      >
+                          {" "}
+                          Log in
+                      </a>
+                  </div>
+                  <form onSubmit={handleRegisterSubmit}>
+                      <input
+                          className="info"
+                          type="text"
+                          name="fullName"
+                          placeholder="FullName"
+                          value={formData.fullName}
+                          onChange={handleInputChange}
+                      />
+                      <br />
+                      <input
+                          className="info"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                      />
+                      <br />
+                      {/* Password field should have eye icon to show password */}
+                      <input
+                          className="info"
+                          type="password"
+                          name="password"
+                          placeholder="Password"
+                          value={formData.password}
+                          onChange={handleInputChange}
+                      />
+                      <br />
+                      <Button bgColor={"#0C4CA3"} width={218} height={269} type="submit">
+                          Sign Up
+                          {console.log(formData.role)}
+                      </Button>
+                  </form>
+              </div>
+          </StyledSignUp>
         </>
     );
 };

@@ -30,10 +30,8 @@ function App() {
           <ToastContainer />
           <Routes>
             {/* public routes */}
-
             <Route path="/register" element={<Register />} />
             <Route path="/login-page" element={<LoginPage />} />
-
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="home" element={<Home />} />
@@ -46,14 +44,12 @@ function App() {
               />
               <Route path="cart" element={<Cart />} />
               <Route element={<RequireAuth />}>
-  
                 <Route path="checkout" element={<CheckoutPage />} />
               </Route>
             </Route>
             {/* protected routes */}
 
             <Route element={<RequireAuth />}>
-              
               <Route path="/mainboard/:orderId" element={<DashboardLayout />}>
                 <Route path="my-courses/:orderId" element={<CoursesPage />} />
                 <Route

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { selectCurrentTokenr, setCredentials } from "features/auth/authSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { setCredentials } from "features/auth/authSlice";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import KITSLogo from "../../assets/images/kits-logo.svg";
+import ThePlayerLogo from "../../assets/images/img_theplayer_logo.png";
 import AsATutor from "../../assets/icons/as-tutor.svg";
 import { Button } from "components/Button/Button";
 import FacebookIcon from "../../assets/icons/facebook-icon.svg";
@@ -16,10 +16,10 @@ import { BASE_URL } from "url/url";
 
 const StyledLogIn = styled.div`
   display: flex;
-  height: 1117px;
+  height: 1111px;
   flex-direction: column;
   align-items: center;
-  background: #def2f3;
+  background: #9fd7f9;
   .logo {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -28,6 +28,7 @@ const StyledLogIn = styled.div`
     .as-a-student {
       padding-bottom: 41px;
     }
+    margin-top: 50px;
     padding: 0px 151px 57px 151px;
     padding-left: 151px;
     padding-right: 151px;
@@ -37,7 +38,7 @@ const StyledLogIn = styled.div`
     background-color: white;
     aspect-ratio: 1;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(42px);
     input.info {
@@ -134,9 +135,8 @@ const LoginPage = () => {
   return (
     <div>
       <StyledLogIn>
-        <img className="logo" src={KITSLogo} alt="" />
         <div className="main">
-          <img className="logo" src={AsATutor} alt="" />
+        <img className="logo" src={ThePlayerLogo} style={{width: "240px", height: "200px"}} alt="" />
           <input
             className="info"
             type="text"
@@ -161,14 +161,14 @@ const LoginPage = () => {
           </div>
           <Button
             width={"218px"}
-            height={"69px"}
+            height={"60px"}
             borderRadius={"31px"}
             bgColor={"#0C4CA3"}
             onClick={(e) => handleLoginSubmit(e)}
           >
             Sign In
           </Button>
-          <div className="or-sign-in">Or Sign In</div>
+          <div className="or-sign-in">or sign in with</div>
           <div className="login-with-other-method">
             <Button
               width={"218px"}
@@ -178,7 +178,7 @@ const LoginPage = () => {
               textColor={"#898686"}
               fontSize={"16px"}
             >
-              <img src={GoogleIcon} alt="" /> with Google
+              <img src={GoogleIcon} alt="" /> Google
             </Button>
             <Button
               width={"218px"}
@@ -189,7 +189,7 @@ const LoginPage = () => {
               textColor={"#898686"}
               fontSize={"16px"}
             >
-              <img src={FacebookIcon} alt="" /> with Facebook
+              <img src={FacebookIcon} alt="" /> Facebook
             </Button>
           </div>
           <div className="no-account">
@@ -200,27 +200,6 @@ const LoginPage = () => {
           </div>
         </div>
       </StyledLogIn>
-      {/* <input
-        type="text"
-        placeholder="mail"
-        value={mail}
-        onChange={(e) => setMail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button id="submit_button" onClick={(e) => handleLoginSubmit(e)}>
-        Sign up
-      </button>
-      <br />
-      <Link to="/register">
-        <button id="register-button">Register</button>
-      </Link> */}
     </div>
   );
 };

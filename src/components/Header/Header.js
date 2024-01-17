@@ -2,16 +2,14 @@ import styled from "styled-components";
 import {
   useNavigate,
 } from "react-router-dom";
-import KitsLogo from "assets/images/kits-logo.svg";
+import ThePlayerLogo from "assets/images/img_theplayer_logo.png";
 import userIcon from "assets/icons/user-regular.svg";
-import searchIcon from "assets/icons/magnifying-glass-solid.svg";
 import cartIcon from "assets/icons/cart-shopping-solid.svg";
 import { useSelector } from "react-redux"
 import { selectCurrentUser } from "features/auth/authSlice";
-import { useState } from "react";
 
 const HeaderStyled = styled.div`
-  height: 167px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,14 +83,7 @@ const Header = () => {
   return (
     <HeaderStyled>
       <div className="left-header" onClick={goHome}>
-        <img src={KitsLogo} alt="logo" style={{ width: "153px", height: "56px" }} />
-        { token ?
-        (<p style={{ cursor: "pointer" }} >
-          Welcome, {user}
-        </p>) : (
-          <></>
-        )
-        }
+        <img src={ThePlayerLogo} alt="logo" style={{ width: "120px", height: "50px" }} />
       </div>
       <div className="right-header">
         <p style={{ cursor: "pointer" }} onClick={goHome}>
@@ -121,15 +112,15 @@ const Header = () => {
         )
         } 
         
-        <img src={userIcon} alt="user" style={{ width: "20px", cursor: "pointer" }} />
-        <div>
-        <img
-          src={cartIcon}
-          alt="cart"
-          style={{ width: "20px", cursor: "pointer" }}
-          onClick={goCart}
-        />
-        <span>{numberOfItemsInCart}</span>
+        <img src={userIcon} alt="user" style={{ width: "16px", cursor: "pointer" }} />
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <img
+            src={cartIcon}
+            alt="cart"
+            style={{ width: "20px", cursor: "pointer" }}
+            onClick={goCart}
+          />
+          <span style={{color: "#e90003"}}>{numberOfItemsInCart}</span>
         </div>
       </div>
     </HeaderStyled>
