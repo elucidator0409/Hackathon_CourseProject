@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Sidebar } from "../Sidebar";
-import { Outlet, useLocation, useParams } from "react-router-dom";
+import CoursesPage from "pages/MyCoursesPage";
+import {Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 const Container = styled.div`
   position: relative;
@@ -46,12 +47,12 @@ const SideBarStyled = styled.div`
 export const DashboardLayout = () => {
   const location = useLocation();
   const user = localStorage.getItem('user')
-  const { id } = useParams();
+  const { id, orderId } = useParams();
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1620px)" });
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1620px)",
   });
-  const mainboardUrl = `/mainboard/${user}`;
+  const mainboardUrl = `/mainboard/${orderId}`;
 
 
   
@@ -114,8 +115,11 @@ export const DashboardLayout = () => {
             <>
               {isDesktopOrLaptop && (
                 <>
-                  <div className="right" style={{ width: "50%" }}>
+                  <div className="right" style={{ width: "100%" }}>
                     <Outlet />
+                    <Link to={{
+    pathname: "/my-courses/:orderId",
+  }}><CoursesPage/> </Link>
                   </div>
                 </>
               )}

@@ -77,7 +77,7 @@ const Header = () => {
     const orderId = user
     console.log(user)
     console.log(orderId)
-    navigate(`/mainboard/${orderId}`)
+    navigate(`/mainboard/:orderId/my-courses/:orderId`)
 
   }
   return (
