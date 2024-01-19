@@ -132,5 +132,9 @@ At the main page you click [Dashboard] you will see [My course] and [Hour purcha
 With [My courses] This is where the courses you have purchased are located.
 With [Hour purchase] history contains order information.
 
+![Screenshot 2024-01-19 at 17 07 51](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/f462b204-dfaf-48f5-9557-734b35108fce)
+![Screen Shot 2024-01-19 at 17 09 53 PM](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/02c3f33e-316d-47c2-9992-e850ffdc8a01)
+![Screen Shot 2024-01-19 at 17 09 30 PM](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/77feb979-c285-4dcb-af20-45e6a81a3bc8)
+![Screen Shot 2024-01-19 at 17 09 53 PM](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/f7b56650-42ad-4c66-96dd-66066e93c93b)
 
 
