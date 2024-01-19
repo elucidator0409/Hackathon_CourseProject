@@ -134,6 +134,7 @@ With [My courses] This is where the courses you have purchased are located.
 ![Screen Shot 2024-01-19 at 17 09 30 PM](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/77feb979-c285-4dcb-af20-45e6a81a3bc8)
 
 With [Hour purchase] history contains order information.
+When you added course then it will be locked.
 
 ![Screen Shot 2024-01-19 at 17 09 53 PM](https://github.com/elucidator0409/Hackathon_CourseProject/assets/40190246/f7b56650-42ad-4c66-96dd-66066e93c93b)
 
