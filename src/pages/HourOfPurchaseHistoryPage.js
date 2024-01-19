@@ -90,7 +90,7 @@ const HourOfPurchaseHistoryPage = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setOrders([data])
+        setOrders(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -101,31 +101,31 @@ const HourOfPurchaseHistoryPage = () => {
   
   return (
   <PageStyled>
-    <h3>Filter</h3>
-  
-    <div className="filter-button">
-      <Button
-        width="165px"
-        height="52px"
-        borderRadius="37px"
-        bgColor="#0C4CA3"
-      >
-        Filter
-      </Button>
-    </div>
     <div>
-      <h3>User: {user}</h3>
+      <h2>Order User: {user}</h2>
     </div>
     <div></div>
     <div className="cards-wrapper">
-      {orders?.map((order) => (
-        <div className="card">
-        <h3>Order of:{user}</h3>
-        <p>ID: {order.orderId}</p>
-        <p>Status:{order.status} </p>
-        <p>Course buy: {order.courses}</p>
-      </div>
-      ))}
+      <table style={{width: "100%", border: "1px dashed #000000", marginTop: "20px"}}>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Status</th>
+            <th>Course buy</th>
+            <th>Order date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders?.map((order, index) => (
+            <tr style={{textAlign: "center"}} className="card" key={index}>
+              <td>{order.orderId}</td>
+              <td>{order.status}</td>
+              <td>{order.courses}</td>
+              <td>{order.orderDate}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </PageStyled>
   )
