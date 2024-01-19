@@ -35,11 +35,9 @@ You may also see any lint errors in the console.
 |-- interface/
     |-- components/ - common components
     |-- pages/ - all pages we have
-    
-|-- favicon.ico
-|-- index.html - HTML entry
-|-- index.js - App entry
 
+    
+|-- index.js - App entry
 
 Dashboard files flow:
 
