@@ -39,44 +39,4 @@ You may also see any lint errors in the console.
     
 |-- index.js - App entry
 
-Dashboard files flow:
 
-
-DashboardLayout component:
-    DashboardHeader
-    Sidebar
-    ProfileColumn
-    DashboardContents
-
-DashboardHeader component:
-    SearchBar
-
-Sidebar component:
-    MyClassesCard
-
-ProfileColumn component:
-    DashboardCard
-    DashboardProfileChart
-
-DashboardContents component :
-    TutorRankingTable
-    TutorHoverCard
-    StudentReviewCard
-    TutorCard
-
-MyClassPageContents component:
-    DropdownSelector
-    CalenderSelector
-    Button
-    MyClassesTable
-
-MyCoursesContents component:
-    DropdownSelector
-    Button
-
-SessionsContents component:
-    DropdownSelector
-    CalenderSelector
-    TimeSelector
-    Button
-    SessionsTable
