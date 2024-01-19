@@ -118,7 +118,9 @@ If you choose [continue shopping] or [Clear Cart] it will turn back [Cart Page].
 ![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/ceaa353b-03b6-42f7-b406-9684c175fa9d)
 
 You can use either paypal method or Continue shopping
+
 ![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/b763af17-781d-4927-a510-4d9786af77d4)
+
 ![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/b4b9cf80-9ad7-4b6f-85b5-063660c2aee6)
 
 ![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/25557df0-938f-4109-8051-25153fe76f84)
