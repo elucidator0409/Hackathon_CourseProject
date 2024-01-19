@@ -46,6 +46,7 @@ const OurCourses = () => {
       });
   }, []);
 
+  const [userCourses, setUserCourses] = useState([]);
   const [userFetch, setUserFetch] = useState([]);
   const [role, setRole] = useState([]);
   const user = localStorage.getItem('user')
@@ -68,6 +69,24 @@ const OurCourses = () => {
    
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      fetch(`${BASE_URL}/admin/courses-of-mail/${user}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setUserCourses(data || []);
+        })
+        .catch((error) => {
+          console.error('Fetch error:', error);
+        });
+    }
+  }, [user]);
+
   let isStudent = true;
   if (role === "TUTOR") {
     isStudent = false
@@ -75,27 +94,7 @@ const OurCourses = () => {
       isStudent = true
   }  
 
-  //   useEffect(() => {
-  //     console.log(user)
-  //     axios.get(`http://localhost:8080/admin/user/${user}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCurrentUser(data);
-  //         setUserCourses(data.courses);
 
-  //       });
-  //   }, []);
-
-  //   useEffect(() => {
-  //     console.log(user)
-  //     axios.get(`http://localhost:8080/admin/user/${user}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCurrentUser(data);
-  //         setUserCourses(data.courses);
-
-  //       });
-  //   }, []);
 
   const navi = useNavigate();
 
@@ -111,15 +110,14 @@ const OurCourses = () => {
         <h2>New Arrivals</h2>
         <div className="products">
           {courses?.map((product, index) => {
-            console.log(product.courseId);
+            const isPurchased = userCourses.some(course => course.courseId === product.courseId);
 
             return (
               <div key={product.courseId} className="product">
                 <h3 onClick={() => navi(`/coursedetails/${product.courseId}`)}>
                   {product.name}
                 </h3>
-                <img
-                  src={product.thumbnail}
+                <img src={product.thumbnail}
                   alt={product.name}
                   onClick={() => navi(`/coursedetails/${product.courseId}`)}
                 />
@@ -133,19 +131,25 @@ const OurCourses = () => {
                 <h5 className="price">${product.price}</h5>
 
                 {/* { !userCourseIds.includes(product.courseId) ? ( */}
-                { isStudent ?
-                (<button onClick={() => handleAddToCart(product)}>
-                  Add To Cart
-                </button>)
-                :
-                (<button onClick={() => navi(`/coursedetails/${orderId}/${product.courseId}`)}>
-                Watch Course
-              </button>)
-                }
-                {/* ) : (<button style={{ background: 'red' }}   >
-                                        Purchased
-                                    </button>)
-                                        } */}
+                {isStudent ? (
+                  <>
+                    {!isPurchased && (
+                      <button onClick={() => handleAddToCart(product)}>
+                        Add To Cart
+                      </button>
+                    )}
+                    {isPurchased && (
+                      <button disabled style={{ background: 'red' }}>
+                        Purchased
+                      </button>
+                    )}
+                  </>
+                ) : (
+                  <button onClick={() => navi(`/coursedetails/${orderId}/${product.courseId}`)}>
+                    Watch Course
+                  </button>
+                )}
+                
               </div>
             );
           })}
