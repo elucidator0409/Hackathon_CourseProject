@@ -6,7 +6,6 @@ logs/
 docs/
 uploads/
 application-local.properties
-application.properties
 
 ### Eclipse ###
 .metadata

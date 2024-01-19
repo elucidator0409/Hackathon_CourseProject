@@ -82,6 +82,10 @@ public class User implements Serializable, UserDetails {
         return true;
     }
 
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public boolean isEnabled() {
         return true;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,11 +28,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order getOrderByMail(String userMail) {
-        Optional<Order> result = orderRepository.findByUserMail(userMail);
-        if(result.isPresent())
-            return result.get();
-        return new Order();
+    public List<Order> getOrderByMail(String userMail) {
+        List<Order> result = orderRepository.findByUserMail(userMail);
+        return result;
+
     }
 
 
