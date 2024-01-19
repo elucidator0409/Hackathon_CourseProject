@@ -1,8 +1,22 @@
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+First. 
+# Node installation on Windows
+Just go on [official Node.js website](http://nodejs.org/) website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
+## check version
+node --version
+## npm
+npm --version
+## npm i -save if you dont have node modules
+If you met this error "'react-scripts' is not recognized as an internal or external command' "
+## npm install react-scripts --save
+
+## change url.js in project directory to
+export const BASE_URL = `http://localhost:8080`
 
 In the project directory, you can run:
 
@@ -14,62 +28,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+1. src - project source code
+2. config.js - app configuration file (port, method,...)
+3. webpack.config.js - webpack configuration file
+4. package.json - Declare necessary modules, libraries,...
+/src/
+    |-- assets/ - folder containing fonts, images, lib js, css,...
+    |-- api.js - declare endpoints
+|-- interface/
+    |-- components/ - common components
+    |-- pages/ - all pages we have
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
+    
+|-- index.js - App entry
 
 Dashboard files flow:
 
@@ -112,3 +83,54 @@ SessionsContents component:
     TimeSelector
     Button
     SessionsTable
+
+## How to use this app
+Use register
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/1d110722-0228-4664-8b68-c9df05255368)
+
+Register new account 
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/e736c890-f8c5-40d2-828b-2af24e131e0f)
+
+Sign in again
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/58424241-15df-466a-87e9-64c7d54445ce)
+
+This is main page
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/43dbc1f9-4049-45f2-8f44-b5887ba32e73)
+
+Go to [course page] and you can see a lot of courses
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/a24cbaed-9d97-4b17-946a-e7785f298cca)
+
+When you click add to cart it will redirect to [Cart page]
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/fe087313-70c3-4a91-83ac-50d0d31515f8)
+
+ You can either continue shopping, [Clear Cart] or checkout this course
+ 
+ ![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/cd90e18b-e409-4045-8f30-e0677f12cbde)
+
+If you choose [continue shopping] or [Clear Cart] it will turn back [Cart Page]. If you Checkout you going to go [Checkout Page]
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/ceaa353b-03b6-42f7-b406-9684c175fa9d)
+
+You can use either paypal method or Continue shopping
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/b763af17-781d-4927-a510-4d9786af77d4)
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/b4b9cf80-9ad7-4b6f-85b5-063660c2aee6)
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/25557df0-938f-4109-8051-25153fe76f84)
+
+At the main page you click [Dashboard] you will see [My course] and [Hour purchase history].
+
+![image](https://github.com/elucidator0409/Hackathon_CourseProject/assets/111008870/da3157b5-15fa-4189-a087-2b42aa1435d7)
+
+With [My courses] This is where the courses you have purchased are located.
+With [Hour purchase] history contains order information.
+
+
+
