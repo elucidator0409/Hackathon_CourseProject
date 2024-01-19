@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 First. 
 # Node installation on Windows
-Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
+Just go on [official Node.js website](http://nodejs.org/) website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
 ## check version
 node --version
 ## npm
