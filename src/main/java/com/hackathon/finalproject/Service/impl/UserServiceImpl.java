@@ -2,6 +2,7 @@ package com.hackathon.finalproject.Service.impl;
 
 import com.hackathon.finalproject.Repository.OrderRepository;
 import com.hackathon.finalproject.Repository.UserRepository;
+import com.hackathon.finalproject.entity.Course;
 import com.hackathon.finalproject.entity.User;
 import com.hackathon.finalproject.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public List<Course> getCoursesByUserEmail(String userEmail) {
+        Optional<User> user = userRepository.findByEmail(userEmail);
+        if (!user.isEmpty()) {
+            return user.get().getCourses();
+        }
+        return null;
     }
 
     @Override

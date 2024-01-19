@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                         "/admin/add-order",
                         "/admin/courses-tutor",
                         "/admin/user/{email}",
+                        "/admin/courses-of-mail/{email}",
                         "/admin/{id}/add-email",
                         "/admin/courses/{id}/{email}",
                         "/admin/tutor",

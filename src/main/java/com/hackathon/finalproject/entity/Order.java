@@ -15,6 +15,10 @@ import java.util.Date;
 @Table(name = "orders")
 public class Order implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String orderId;
 
     @Temporal(TemporalType.DATE)
