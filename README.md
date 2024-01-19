@@ -34,7 +34,24 @@ There are 4 step to setup initial data for main table of database :
 ./createDB.sh
 ```
 - Start Springboot project
-- Run this command to insert initial data for project: 
+- Then run this command to insert initial data for project: 
 ```
 ./ini.sh
-``` 
+```
+
+**IMPORTANT** If can not run `sh` file , run command direct in your terminal :
+- Run: 
+```
+mysqladmin -u <USERNAME> -p'<PASSWORD>' create edu
+```
+
+For example:
+```
+mysqladmin -u root -p'Quockhanh0409' create edu
+```
+
+- Start Springboot project
+- Then run:
+```
+mysql -u <USERNAME> -p'<PASSWORD>' --database=edu -e 'source data.sql'
+```
